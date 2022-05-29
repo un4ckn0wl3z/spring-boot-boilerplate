@@ -1,0 +1,13 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://134.209.108.174:30331/user_registration
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

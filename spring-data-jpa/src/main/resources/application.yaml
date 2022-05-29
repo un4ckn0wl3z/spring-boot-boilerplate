@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://134.209.108.174:30331/schooldb
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+hello:
+  message: 'School API'
+---

@@ -1,0 +1,53 @@
+server:
+  port: 8082
+spring:
+  profiles:
+    active: qa
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://134.209.108.174:30331/dcbapp
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+hello:
+  message: 'Hello World!! dev'
+---
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://134.209.108.174:30331/dcbapp-qa
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+hello:
+  message: 'Hello World!! qa'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+---
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://134.209.108.174:30331/dcbapp-prod
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+hello:
+  message: 'Hello World!! prod'
